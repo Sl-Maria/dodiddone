@@ -1,5 +1,7 @@
+import 'package:dodiddone/pages/main_page.dart';
 import 'package:flutter/material.dart';
-import 'package:dodiddone/theme/theme.dart'; // Import the theme file
+import 'package:dodiddone/theme/theme.dart';
+
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -90,7 +92,12 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 const SizedBox(height: 30),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const MainPage()));
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
                     padding: const EdgeInsets.symmetric(
