@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../screens/all_tasks.dart';
+import '../screens/profile.dart';
 import '../theme/theme.dart';
 
 class MainPage extends StatefulWidget {
@@ -13,10 +15,10 @@ class _MainPageState extends State<MainPage> {
   int _selectedIndex = 0;
 
   static const List<Widget> _widgetOptions = <Widget>[
-    Text('Задачи'),
+    TaskPage(),
     Text('Сегодня'),
-    Text('Профиль'),
     Text('Выполнено'),
+    ProfilePage(),
   ];
 
   void _onItemTapped(int index) {
@@ -63,12 +65,12 @@ class _MainPageState extends State<MainPage> {
             label: 'Сегодня',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Профиль',
-          ),
-          BottomNavigationBarItem(
             icon: Icon(Icons.check_circle),
             label: 'Выполнено',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Профиль',
           ),
         ],
         currentIndex: _selectedIndex,
